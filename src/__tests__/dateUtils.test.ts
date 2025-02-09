@@ -13,10 +13,10 @@ describe("Date Utils", () => {
         expect(getCurrentYear()).toBe(currentYear);
       });
 
-    // isSame test
+    // add test
 
       it("Should add days to a given date", () => {
-        const date = new Date(2025, 0, 1);
+        const date = new Date(2025, 1, 1);
         const result = add(date, 5, DATE_UNIT_TYPES.DAYS);
         expect(moment(result).isSame(moment(date).add(5, 'days'))).toBe(true);
       });
