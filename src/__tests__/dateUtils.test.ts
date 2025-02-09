@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import moment from 'moment';
-import { getCurrentYear, add, isWithinRange, isDateBefore, isSameDay } from '../dateUtils.ts';
+import { getCurrentYear, add, isWithinRange, isDateBefore, sameDay } from '../dateUtils.ts';
 import { DATE_UNIT_TYPES } from '../constants';
 
 describe("Date Utils", () => {
@@ -56,13 +56,13 @@ describe("Date Utils", () => {
       it("Should check if two dates are the same day", () => {
         const date1 = new Date(2025, 1, 1);
         const date2 = new Date(2025, 1, 1);
-        expect(isSameDay(date1, date2)).toBe(true);
+        expect(sameDay(date1, date2)).toBe(true);
       });
 
       it("Should return false if two dates are not the same day", () => {
         const date1 = new Date(2025, 1, 1);
         const date2 = new Date(2025, 1, 2);
-        expect(isSameDay(date1, date2)).toBe(false);
+        expect(sameDay(date1, date2)).toBe(false);
       });
 
 });
